@@ -1,0 +1,90 @@
+main{
+    padding-top: 1rem ;
+}
+
+/*Adding signup-page top for my code as part of adjustment*/
+.signup-page{
+    position: relative;
+    top: 25px;
+}
+
+.signup-title{
+    text-align: center;
+    font-size: 1.5rem;
+    color: #ff5454;
+}
+
+.signup-form{
+    padding: 1rem;
+}
+
+.signup-form label{
+    font-weight: bold;
+}
+
+.signup-form label,
+.signup-form select,
+.signup-form input{
+    display: block;
+    margin-top: 1rem;
+    width: 100%;
+}
+
+.signup-form input:not([type="checkbox"]),
+.signup-form select{
+    padding: 0.2rem 0.5rem;
+    border: 1px solid #ccc;
+    font: inherit;
+}
+
+.signup-form input:not([type="checkbox"]):focus,
+.signup-form select:focus{
+    outline: none;
+    background: #d8f3df;
+    border-color: #2ddf5c;
+}
+
+/*.signup-form input[id*="terms"] we can select terms, agree or agree terms as well.*/
+/* .signup-form input[id*="terms"] + label{display: inline-block; width: auto;} */
+.signup-form input[type="checkbox"],
+.signup-form input[type="checkbox"] + label{
+    display: inline-block;
+    width: auto;
+    vertical-align: bottom;
+}
+
+.signup-form input[type="checkbox"]{
+    border: 1px solid #ccc;
+    background: white;
+    height: 1rem;
+    width: 1rem;
+    appearance: none;
+}
+
+.signup-form input[type="checkbox"]:checked{
+    background: #331ef0;
+    border: 1px solid #ccc;
+}
+
+.signup-form :invalid{
+    background-color: #f64545; 
+}
+
+.signup-form button[type="submit"]{
+    display: block;
+    margin-top: 1rem;
+}
+
+.main-footer{
+    position: absolute;
+    width: 100%;
+    top: 900px;
+}
+
+@media (min-width: 40rem) {
+    .signup-form{
+        margin: auto;
+        width: 25rem;
+        
+    }
+}

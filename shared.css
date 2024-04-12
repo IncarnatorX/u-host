@@ -1,0 +1,262 @@
+*{
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+}
+
+.backdrop{
+    width: 100vw;/*Can use 100% but 100vw is better*/
+    height: 100vh;/*Can use 100% but 100vh is better*/
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.5);
+    top: 0;
+    left: 0;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.2s linear;
+}
+
+/* Commenting this since it is not required as the main-header is a flex container */
+/* .main-header > div{
+    display: inline-block;
+    vertical-align: middle;
+} */
+
+.toggle-button {
+    width: 2.2rem;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding-top: 0;
+    padding-bottom: 0;
+    vertical-align: middle;
+  }
+  
+.toggle-button:focus {
+    outline: none;
+  }
+  
+.toggle-button__bar {
+    width: 100%;
+    height: 0.1rem;
+    background: black;
+    display: flex;
+    margin: 0.339rem 0; /*Changed from 0.5 to 0.339 */
+}
+
+.main-header{
+    background-color: #2ddf5c ;
+    padding: 0.5rem 1rem;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center; 
+    justify-content: space-between;
+}
+
+ 
+
+.main-header-brand{
+    text-decoration: none;
+    color: #331ef0;
+    font-weight: bold;
+    /* height: 2.5rem; */ /*Commenting this since its parent is flex and we can assign height directly to img*/
+}
+
+.main-header-brand img{
+    height: 2.2rem;
+     vertical-align: middle;/*Adding this since toggle button class has same declaration*/
+}
+
+.main-nav{
+    display: flex;
+    /* display: inline-block;
+    text-align: right;
+    width: calc(100% - 74px);
+    vertical-align: middle; */
+}
+
+.main-nav-items{
+    padding: 0px;
+    margin: 0;
+    list-style: none;
+    display: none;
+}
+
+
+.main-nav-item{
+  /* display: inline-block; */
+  margin: 0.1rem;
+  padding: 0 10px;
+}
+
+@media (min-width: 40rem) {
+    .main-nav-items{
+        display: flex;
+    }
+
+    .toggle-button{
+        display: none;
+    }
+}
+
+.main-nav-item a,
+.mobile-nav__item a{
+    text-decoration: none;
+    color: #331ef0 ;
+    font-weight: bold;
+    padding: 0.1rem 0;
+}
+
+.main-nav-item a:hover,.main-nav-item a:active,
+.mobile-nav__item a:hover, .mobile-nav__item a:active{
+    color: whitesmoke;
+    border-bottom: 0.2rem solid grey;
+}
+
+.main-nav-item-cta a,
+.mobile-nav__item--cta a{
+    color: white;
+    background: #ff1b68;
+    border-radius: 5px;
+    padding: 0.4rem 1rem;
+}
+
+.main-nav-item-cta{
+    animation: wiggle 400ms 1s 8 ease-out none;
+}
+
+.main-nav-item-cta a:hover, .main-nav-item-cta a:active,
+.mobile-nav__item--cta a:hover, .mobile-nav__item--cta a:active{
+    border: none;
+    color: #ff1b68;
+    background: white;
+}
+
+.mobile-nav 
+{
+display: none;
+position: fixed;
+z-index: 101;
+top: 0;
+left: 0;
+background: white;
+width: 50%;
+height: 100vh;
+background-color: rgba(255, 182, 193, 0.8);
+}
+      
+.mobile-nav__items {
+    width: 100%;
+    height: 100%;
+    list-style: none;
+    margin: 0 auto;
+    padding: 0;
+    /* text-align: center; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.mobile-nav__item {
+margin: 1rem 0;
+}
+      
+.mobile-nav__item a {
+font-size: 1rem;
+}
+
+/*FOOTER STARTS HERE*/
+
+
+.main-footer{
+    background-color: black;
+    padding: 1rem;
+    margin-top: 3rem;
+}
+
+/*in the video its main footer links class*/
+.main-footer-list{
+    list-style: none;
+    padding: 0;
+    /* margin: 0; */
+    /* text-align: center; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main-footer-link{
+    /* display: inline-block; */ /*Not required since parent element already flex*/
+    margin: 0.5rem;
+}
+
+.main-footer-link a{
+    color: white;
+    text-decoration: none;
+    padding: 0 10px;
+}
+
+.main-footer-link a:hover, .main-footer-link a:active{
+    color: #ccc;
+}
+
+@media (min-width:40rem){
+
+.main-footer-list{
+flex-direction: row;
+justify-content: center;
+}
+
+}
+
+
+.button{
+    background: #402de9;
+    color: white;
+    font: inherit;
+    border: 1px solid #402de9;
+    padding: 0.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+}
+    
+.button:hover, .button:active{
+background: white;
+color: #402de9;
+/* text-shadow: 2px 2px 2px #ff1b68; */
+}
+
+.button[disabled]
+{
+    cursor: not-allowed;
+    border: #a1a1a1;
+    background: #ccc;
+    color: #a1a1a1;
+}
+
+.open{
+display: block !important;
+opacity: 1 !important;
+transform: translateY(0) !important;
+ }
+
+ @keyframes wiggle {
+     0%{
+    transform: rotateZ(0);
+     }
+     50%{
+         transform: rotateZ(-10deg);
+     }
+     100%{
+        transform: rotateZ(10deg);
+     }
+ }

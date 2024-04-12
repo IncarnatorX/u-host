@@ -1,0 +1,85 @@
+main{
+    padding-top: 2rem;
+}
+
+.background{
+    background-image: url("plans-background.jpg");
+    background-size: cover;
+    filter: grayscale(100%);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: -1;
+    top: 0;
+}
+
+.package{
+    margin: 0;
+    border: 4px solid green;
+    width: 80%;
+    position: relative;
+    overflow: hidden;
+}
+
+.package:hover, .package:active{
+    box-shadow: 2px 2px 4px rgba(1, 1, 1, 0.5);
+    border-color: #ff5454;
+}
+
+.package a{
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    padding: 2rem;
+}
+
+.package-badge{
+    position: absolute;
+    background-color: #ff5454;
+    color: white;
+    padding: 0.5rem;
+    font-size: 0.75rem;
+    right: 0;
+    top: 0;
+    margin: 0; /*Setting this to 0 from 1.2rem for transformation*/
+    width: 12rem;
+    text-align: center;
+    transform: rotateZ(45deg) translateX(3.5rem) translateY(-1rem); /* transform: rotate(45deg) translate(3.5rem, -1rem);*/
+    transform-origin: center; /*This is not required but still adding and its default*/
+}
+
+.package-subtitle{
+    color: #747474 ;
+}
+
+.package-info{
+    color: #b81212;
+    border: 2px solid #31ec95;
+    padding: 0.5rem;
+    font-size: 1.2rem;
+    background-color: whitesmoke;
+}
+
+#plus{
+    background-color: rgba(213, 255, 220, 0.95);
+}
+
+.fix{
+    clear: both;
+}
+
+#free{
+    background-color: rgba(234, 252, 237, 0.95);
+    float: right;
+}
+
+#premium{
+    background-color: rgba(14, 79, 31, 0.95);
+}
+
+@media (min-width: 40rem){
+    main{
+      margin: 3rem auto;
+      max-width: 1200px;
+    }
+}
