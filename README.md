@@ -1,3 +1,3 @@
 # u-host
 
-https://user-vishnu.github.io/u-host/
+https://IncarnatorX.github.io/u-host/
